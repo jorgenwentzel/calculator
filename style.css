@@ -1,0 +1,98 @@
+
+#outline {
+    display: flex;
+    width: 370px;
+    height: 610px;
+    background-color: #4B4237;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    flex-direction: column;
+}
+
+#upper-part {
+    width: 345px;
+    height: 100px;
+    
+}
+
+#display {
+    width: 350px;
+    height: 80px;
+    box-sizing: border-box;
+    background-color: #0c1f0f;
+    margin-left: 10px;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-size: 56px;
+    color: #D6F9DD;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    line-height: 80px;
+    
+}
+
+.lower-part {
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.btn-container {
+    height: 90px;
+    width: 360px;
+    display: flex;
+    justify-content: left;
+    margin-left: 5px;
+}
+
+.lower-part button {
+    width: 80px;
+    height: 80px;
+    border-radius:10px;
+    border: none;
+    background: none;
+    background-color: #EDE7D9;
+    font-size: 30px;
+    font-family: 'Jura', sans-serif;
+    margin: 5px 5px 5px 5px;
+}
+
+
+#clear-btn {
+    width: 170px;
+    background-color: #D5A021;
+}
+
+#sum-btn {
+    background-color: #D5A021;
+    width: 170px;
+}
+
+#zero-btn {
+    width: 170px;
+}
+
+#add-btn {
+    background-color: #D5A021;
+}
+
+#divide-btn {
+    background-color: #D5A021;
+}
+
+#multiply-btn {
+    background-color: #D5A021;
+}
+
+#subtract-btn {
+    background-color: #D5A021;
+}
+
+#comma-btn {
+    background-color: #D5A021;
+}
