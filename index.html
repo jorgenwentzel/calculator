@@ -13,43 +13,41 @@
 <body>
     <div id="outline">
         <div id="upper-part">
-            <div id="display">
-                5800828
-            </div>
+            <div id="display"></div>
         </div>
         <div class="lower-part">
             <div class="btn-container">
-                <button type="button" id="clear-btn">CLEAR</button>
+                <button type="button" id="clear-btn" onclick="clearAll()">CLEAR</button>
                 <button type="button" id="comma-btn">.</button>
-                <button type="button" id="divide-btn">/</button>
+                <button type="button" id="divide-btn" class="operator-btn">/</button>
             </div>
             <div class="btn-container">
-                <button type="button" id="seven-btn">7</button>
-                <button type="button" id="eight-btn">8</button>
-                <button type="button" id="nine-btn">9</button>
-                <button type="button" id="multiply-btn">*</button>
+                <button type="button" id="seven-btn" class="number-btn">7</button>
+                <button type="button" id="eight-btn" class="number-btn">8</button>
+                <button type="button" id="nine-btn" class="number-btn">9</button>
+                <button type="button" id="multiply-btn" class="operator-btn">*</button>
             </div>
             <div class="btn-container">
-                <button type="button" id="four-btn">4</button>
-                <button type="button" id="five-btn">5</button>
-                <button type="button" id="six-btn">6</button>
-                <button type="button" id="subtract-btn">-</button>
+                <button type="button" id="four-btn" class="number-btn">4</button>
+                <button type="button" id="five-btn" class="number-btn">5</button>
+                <button type="button" id="six-btn" class="number-btn">6</button>
+                <button type="button" id="subtract-btn" class="operator-btn">-</button>
             </div>
             <div class="btn-container">
-                <button type="button" id="one-btn">1</button>
-                <button type="button" id="two-btn">2</button>
-                <button type="button" id="three-btn">3</button>
-                <button type="button" id="add-btn">+</button>
+                <button type="button" id="one-btn" class="number-btn">1</button>
+                <button type="button" id="two-btn" class="number-btn">2</button>
+                <button type="button" id="three-btn" class="number-btn">3</button>
+                <button type="button" id="add-btn" class="operator-btn">+</button>
             </div>
             <div class="btn-container">
-                <button type="button" id="zero-btn">0</button>
-                <button type="button" id="sum-btn">=</button>
+                <button type="button" id="zero-btn" class="number-btn">0</button>
+                <button type="button" id="sum-btn" onclick="sum()">=</button>
             </div>
         </div>
     </div>
    
   
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
