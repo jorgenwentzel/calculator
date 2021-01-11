@@ -55,11 +55,15 @@
     border: none;
     background: none;
     background-color: #D6F9DD;
-    font-size: 30px;
+    font-size: 1.5em;
     font-family: 'Jura', sans-serif;
     margin: 5px 5px 5px 5px;
+    outline: none;
 }
 
+.lower-part button:active {
+    background-color:white;
+}
 
 #clear-btn {
     width: 170px;
