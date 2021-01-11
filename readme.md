@@ -5,8 +5,8 @@ Challenges:
 and modified values depending on input. When I got this right, modifying
 functions went without any major issues. 
 
-- Using event listeners for keys, and separating numbers, operators
-and the decimal key.
+- Using event listeners for buttons, and separating numbers, operators
+and the decimal button.
 
 Areas to practice:
 - Arrow functions, need to fully understand the logic. Many functions in the 
