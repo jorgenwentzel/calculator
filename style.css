@@ -13,7 +13,6 @@
 #upper-part {
     width: 345px;
     height: 100px;
-    
 }
 
 #display {
@@ -31,8 +30,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
-    line-height: 80px;
-    
+    line-height: 80px;  
 }
 
 .lower-part {

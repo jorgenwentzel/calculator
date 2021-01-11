@@ -11,24 +11,39 @@ var memory = {
     input1:null,
     input2:null, 
     operator:null,
-    sum:null,
-    ongoing:false,
     previousKey:null
 };
 
 function operate(input1, input2, operator){
+    let sum = 0
     switch(operator) {
         case '+':
-            return parseFloat(input1) + parseFloat(input2);
+            sum = parseFloat(input1) + parseFloat(input2);
+            if(!Number.isInteger(sum)) {
+                return sum.toFixed(3);
+            }
+            else {return sum};
             break;
         case '-':
-            return parseFloat(input1) - parseFloat(input2);
+            sum = parseFloat(input1) - parseFloat(input2);
+            if(!Number.isInteger(sum)) {
+                return sum.toFixed(3);
+            }
+            else {return sum};
             break;
         case '*':
-            return parseFloat(input1) * parseFloat(input2);
+            sum = parseFloat(input1) * parseFloat(input2);
+            if(!Number.isInteger(sum)) {
+                return sum.toFixed(3);
+            }
+            else {return sum};
             break;
         case '/':
-            return parseFloat(input1) / parseFloat(input2);
+            sum = parseFloat(input1) / parseFloat(input2);
+            if(!Number.isInteger(sum)) {
+                return sum.toFixed(3);
+            }
+            else {return sum};
             break;
         default:
             return 'error';
@@ -36,17 +51,23 @@ function operate(input1, input2, operator){
 }
 
 function lengthChecker() {
-    if ((displayValue.textContent.length) < 6) {
+    if((displayValue.textContent.length) < 6) {
         displayValue.style.fontSize = "56px";
-        }
+    }
     
-    if ((displayValue.textContent.length) > 6) {
+    if((displayValue.textContent.length) > 6) {
         displayValue.style.fontSize = "40px";
-        }
+    }
 
-    if (displayValue.textContent.length >= 9) {
+    if((displayValue.textContent.length) >= 9) {
         disableNum();
-        }
+    }
+
+    if((displayValue.textContent.length) >= 10) {
+        clearAll();
+        displayValue.textContent = 'error';
+    }
+    
 }
 
 function disableNum() {
@@ -91,14 +112,14 @@ function clearAll() {
 //comma-btn
 document.getElementById("comma-btn").addEventListener("click", () => {
     let currentDisplay = displayValue.textContent;
-    if (currentDisplay.includes('.')) {
+    if (currentDisplay.includes('.') || (displayValue.textContent.length >= 9)) {
         return;
     }
     else if(!currentDisplay.includes('.')) {
         displayValue.textContent += '.';
+        lengthChecker();
     }
 });
-
 
 //numbutton eventlisteners
 numButtons.forEach((button) => {
@@ -117,7 +138,12 @@ numButtons.forEach((button) => {
         }
         else if(memory.previousKey === 'operator') {
             clearDisplay();
-            memory.previousKey = null;
+            memory.previousKey = 'numButton';
+            displayValue.textContent += button.textContent;
+            lengthChecker();
+            memory.input2 = displayValue.textContent;
+        }
+        else if(memory.previousKey === 'numButton') {
             displayValue.textContent += button.textContent;
             lengthChecker();
             memory.input2 = displayValue.textContent;
@@ -125,16 +151,14 @@ numButtons.forEach((button) => {
     });
 }); 
     
-    
 //operatorbutton eventlisteners
-//BUG: displayValue over 10 resets calculations
-//BUG: multiplying by one and then pressing plus operator adds one to sum before operating
 operatorButtons.forEach((button) => {
     button.addEventListener('click', () => {
         enableNum();
         if (button.textContent === '=') {
             if(memory.input1 !== null && memory.input2 !== null){
                 displayValue.textContent = operate(memory.input1, memory.input2, memory.operator);
+                lengthChecker();
                 memory.input1 = displayValue.textContent;
                 memory.previousKey = 'sum';
             }
@@ -154,7 +178,8 @@ operatorButtons.forEach((button) => {
 
         else if (memory.input2 !== null) {
             disableOperators();
-            displayValue.textContent = operate(memory.input1, memory.input2, button.textContent);
+            displayValue.textContent = operate(memory.input1, memory.input2, memory.operator);
+            lengthChecker();
             memory.input1 = displayValue.textContent;
             memory.operator = button.textContent;
             memory.previousKey = 'operator';
@@ -167,11 +192,12 @@ operatorButtons.forEach((button) => {
     
 /*
 TODO
--add comma functionality
--fix bugs in operator functions
+-add comma functionality                            CHECK
+-fix bugs in operator functions                     CHECK
 -clean code
     -make sure its to standard and simplified
     -remove unused code
+-Add active state to operator buttons
 */
 
 
